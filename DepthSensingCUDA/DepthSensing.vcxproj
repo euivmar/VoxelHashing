@@ -32,7 +32,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.1.props" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.2.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -98,17 +98,17 @@
       <FloatingPointModel>Fast</FloatingPointModel>
       <ExceptionHandling>Sync</ExceptionHandling>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;D3DXFX_LARGEADDRESS_HANDLE;_CRT_SECURE_NO_WARNINGS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Source\DXUT\Optional;Source\DXUT\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Source\DXUT\Optional;Source\DXUT\Core;E:\Libraries\opencv-4.3.0\build\install\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <DisableSpecificWarnings>4819</DisableSpecificWarnings>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;d3dx11.lib;d3dx9.lib;dxerr.lib;dxguid.lib;winmm.lib;comctl32.lib;Shlwapi.lib;cudart.lib;cublas.lib;FreeImage.lib;zlib64.lib;opencv_world440.lib;opencv_world440d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;d3dcompiler.lib;d3dx11.lib;d3dx9.lib;dxerr.lib;dxguid.lib;winmm.lib;comctl32.lib;Shlwapi.lib;cudart.lib;cublas.lib;FreeImage.lib;zlib64.lib;opencv_world430.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>../opencv/lib/;C:\Users\14109\Downloads\opencv\build\x64\vc15\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\Libraries\opencv-4.3.0\build\install\x64\vc16\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Manifest>
       <EnableDPIAwareness>true</EnableDPIAwareness>
@@ -116,7 +116,7 @@
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
       <Include>Include\cutil\inc;$(SolutionDir)</Include>
-      <CodeGeneration>compute_30,sm_30</CodeGeneration>
+      <CodeGeneration>compute_30,sm_30;compute_75,sm_75</CodeGeneration>
       <MaxRegCount>62</MaxRegCount>
       <FastMath>true</FastMath>
       <Optimization>O3</Optimization>
@@ -314,6 +314,6 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.1.targets" />
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 10.2.targets" />
   </ImportGroup>
 </Project>
